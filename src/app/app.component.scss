@@ -1,0 +1,45 @@
+.box {
+    height: 200px;
+    width: 200px;
+    overflow: auto;
+    background: red;
+}
+
+.products--grid {
+    display: flex;
+    flex-direction: column;
+    div {
+        width: 100%;
+        border-radius: 10px;
+    }
+    h2,
+    p {
+        margin: 0;
+    }
+}
+
+.message-error {
+    color: white;
+    background: red;
+    opacity: 0;
+    transition: all linear .5s;
+    &.invalid {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .products--grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .products--grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 15px;
+    }
+}
